@@ -3,7 +3,7 @@ title: ThreadLocal 理解
 tags:
   - java
 date: 2017-08-18 23:58:56
-categories:Java
+categories: Java
 ---
 
 > 先在这里给出自己对 ThreadLocal 的理解：
