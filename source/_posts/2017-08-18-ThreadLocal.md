@@ -100,5 +100,7 @@ class TestRun {
 
 [谈谈ThreadLocal和解决线程安全的关系](http://zhangbo-peipei-163-com.iteye.com/blog/2029216?utm_source=qq&utm_medium=social)
 
+《Android 开发艺术探索》 10.2.1
+
 
 
