@@ -12,9 +12,9 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://www.dozeboy.cn/
 root: /
-permalink: :year/:month/:day/:title/
+permalink: title.html
 permalink_defaults:
 
 # Directory
@@ -77,9 +77,17 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repo: 
+  - type: git
+    repo: 
     github: git@github.com:zerofate/dozeboy.github.io.git
-#    coding: git@git.coding.net:zerofate/blog.git
-  branch: master
+    coding: git@git.coding.net:zerofate/blog.git
+    branch: master
+  - type: baidu_url_submitter
+
+baidu_url_submit:
+  count: 100 # 提交最新的一个链接
+  host: www.dozeboy.cn # 在百度站长平台中注册的域名
+  token: ZOtsYA6gU4tVBB4k # 在百度站长网页的链接提交中的接口调用地址中查看
+  path: baidu_urls.txt # 文本文档的地址， 新链接会保存在此文本文档里
+
   

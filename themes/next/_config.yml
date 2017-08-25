@@ -209,8 +209,8 @@ post_meta:
 # Dependencies: https://github.com/willin/hexo-wordcount
 post_wordcount:
   item_text: true
-  wordcount: false
-  min2read: false
+  wordcount: true
+  min2read: true
   totalcount: false
   separated_meta: true
 
@@ -383,7 +383,7 @@ valine:
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
-#google_site_verification:
+google_site_verification: lOH0mygvYEe08pp8wBQ8mAcfeH1-is7oa6R5nFvx_D8
 
 # Google Analytics
 #google_analytics:
@@ -448,9 +448,9 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: false
-  app_id: #<app_id>
-  app_key: #<app_key>
+  enable: enable
+  app_id: QmINcjqeRHotxyFTrfYXcntp-gzGzoHsz #<app_id>
+  app_key: 0HfFTF4qWR7H4AeOH5zf5soh #<app_key>
 
 # Show PV/UV of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
@@ -479,7 +479,7 @@ busuanzi_count:
 
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
-baidu_push: false
+baidu_push: true
 
 # Google Calendar
 # Share your recent schedule to others via calendar page
@@ -691,3 +691,5 @@ images: images
 
 # Theme version
 version: 5.1.2
+
+
