@@ -53,7 +53,7 @@ ConstraintLayout，约束布局。
 - `layout_constraintEnd_toStartOf`
 - `layout_constraintEnd_toEndOf`
 
-![relative-positioning-constraints](C:\Users\sdt13599\OneDrive\markdown\photo\ConstraintLayout\relative-positioning-constraints.png)
+![relative-positioning-constraints](https://ws3.sinaimg.cn/large/006tKfTcgy1fizao2sxo6j30fy04b74i.jpg)
 
 > 这些属性接受的是一个引用id或者*parent*（指向父容器）。以layout_constraintLeft_toLeftOf为例进行说明，第一个Left表示该widget的left位置，第二个left表示另一个widget的left，该属性指定的是一个widget左边位置与另一个widget的左边位置对齐。
 
@@ -61,7 +61,7 @@ ConstraintLayout，约束布局。
 
 ### Margins
 
-![relative-positioning-margin](C:\Users\sdt13599\OneDrive\markdown\photo\ConstraintLayout\relative-positioning-margin.png)
+![relative-positioning-margin](https://ws1.sinaimg.cn/large/006tKfTcgy1fizao1y8o8j30df03zaa3.jpg)
 
 普通的margin属性：
 
@@ -101,7 +101,7 @@ ConstraintLayout，约束布局。
          </
 ```
 
-![centering-positioning](C:\Users\sdt13599\OneDrive\markdown\photo\ConstraintLayout\centering-positioning.png)
+![centering-positioning](https://ws4.sinaimg.cn/large/006tKfTcgy1fizao7gkjaj30bp02pjrd.jpg)
 
 #### Bias
 
@@ -122,7 +122,7 @@ ConstraintLayout，约束布局。
          </>
 ```
 
-![centering-positioning-bias](C:\Users\sdt13599\OneDrive\markdown\photo\ConstraintLayout\centering-positioning-bias.png)
+![centering-positioning-bias](https://ws1.sinaimg.cn/large/006tKfTcgy1fizao7enbbj30bp02pjrd.jpg)
 
 > 此控件是水平居中，所以只能进行水平的偏向，此时设置layout_constraintVertical_bias将无效。
 
@@ -133,7 +133,7 @@ ConstraintLayout，约束布局。
 ​	当widget被标记为`View.GONE`时，ConstraintLayout会有特殊的处理。通常，widget变为GONE后，将不会显示并且不再是布局的一部分。但根据布局计算，GONE的widget仍然是其中的一部分，只是有一个重大的区别：
 
 + 在布局传递中，它们的尺寸将被当作零（根本上来说，它们将被视为一个点）
-+ 如果它们与其它widget间有约束，它们仍会被考虑，但它们的margin会被视作零![visibility-behavior](C:\Users\sdt13599\OneDrive\markdown\photo\ConstraintLayout\visibility-behavior.png)。
++ 如果它们与其它widget间有约束，它们仍会被考虑，但它们的margin会被视作零![visibility-behavior](https://ws3.sinaimg.cn/large/006tKfTcgy1fizao8iyenj30f007at8z.jpg)。
 
 > 可以通过设置gone的margin属性来确保在A变为gone时，B到left间的margin与A保持一致。
 
@@ -156,7 +156,7 @@ ConstraintLayout，约束布局。
 + 使用WRAP_CONTENT
 + 使用0dp，等同于`MACTH_CONSTRAINT`
 
-![dimension-match-constraints](C:\Users\sdt13599\OneDrive\markdown\photo\ConstraintLayout\dimension-match-constraints.png)
+![dimension-match-constraints](https://ws2.sinaimg.cn/large/006tKfTcgy1fizao6vvfaj30d6099mxk.jpg)
 
 ​	前两种方式与其它布局一致。第三种将调整widget的大小来匹配设置的约束条件。上图中，(a)为wrap_content，(b)为0dp，(c)为设置了margin的情形。
 
@@ -166,7 +166,7 @@ ConstraintLayout，约束布局。
 
 #### Ratio
 
-​	我们可以按照某一边的比例来设置widget的另一边，实现此效果的前提是至少有一边的尺寸为0dp，然后通过属性``layout_constraintDimentionRatio` `来指定比例，如
+​	我们可以按照某一边的比例来设置widget的另一边，实现此效果的前提是至少有一边的尺寸为0dp，然后通过属性`layout_constraintDimentionRatio` 来指定比例，如
 
 ```xml
 <Button android:layout_width="wrap_content"
@@ -207,13 +207,13 @@ ConstraintLayout，约束布局。
 
 #### Creating a chain
 
-​	几个widget之间如果是双向连接，则可视为一个链。![chains](C:\Users\sdt13599\OneDrive\markdown\photo\ConstraintLayout\chains.png)
+​	几个widget之间如果是双向连接，则可视为一个链。![chains](https://ws1.sinaimg.cn/large/006tKfTcgy1fizao82t3hj30hi04uaac.jpg)
 
 #### Chain heads
 
 ​	chain由第一个元素的属性进行控制。
 
-![chains-head](C:\Users\sdt13599\OneDrive\markdown\photo\ConstraintLayout\chains-head.png)
+![chains-head](https://ws2.sinaimg.cn/large/006tKfTcgy1fizao3lx7cj30ph03rjrq.jpg)
 
 #### Margins in chains
 
@@ -235,7 +235,7 @@ ConstraintLayout，约束布局。
 
 + CHAIN_SPREAD_INSIDE：最后的端点不会被铺开
 
-+ CHAIN_PACKED：chain中的元素挤在一起。![chains-styles](C:\Users\sdt13599\OneDrive\markdown\photo\ConstraintLayout\chains-styles.png)
++ CHAIN_PACKED：chain中的元素挤在一起。![chains-styles](https://ws4.sinaimg.cn/large/006tKfTcgy1fizao5jib1j31200h4whb.jpg)
 
 
 
