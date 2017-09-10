@@ -17,7 +17,7 @@ categories: 笔记
 + 时间插值器：计算随时间变化的属性的值
 + 重复次数和反应（behavior）：指定动画是否重复及重复次数，还可以指定动画是否反向（reverse）执行
 + 动画集（Animator sets）：将动画组合在一起，可以一起播放或者顺序播放，也可以在指定延时后播放
-+ 帧刷新延时（Frame refresh delay）：刷新动画帧的时间。默认是每10ms刷新，但app的帧刷新速度最终取决于系统当前的忙碌状态以及系统基于底层计时器执行服务的速度。
++ 帧刷新延时（Frame refresh delay）：刷新动画帧的时间。默认是每 10ms 刷新，但 app 的帧刷新速度最终取决于系统当前的忙碌状态以及系统基于底层计时器执行服务的速度。
 
 
 
@@ -26,22 +26,22 @@ categories: 笔记
 
 线性动画：
 
-变化属性为X属性，持续时间40ms，变化距离为40像素点。该动画使用的是线性插值器。
+变化属性为X属性，持续时间 40ms ，变化距离为 40 像素点。该动画使用的是线性插值器。
 
-![animation-linear](/Users/zero/OneDrive/markdown\photo\动画\animation-linear.png)
+![animation-linear](https://ws4.sinaimg.cn/large/006tNc79gy1fj0dour3o6j30fs04m74p.jpg)
 
 非线性动画：
 
 例子中为动画起始加速，最后减速停止
 
-![animation-nonlinear](/Users/zero/OneDrive/markdown\photo\动画\animation-nonlinear.png)
+![animation-nonlinear](https://ws3.sinaimg.cn/large/006tNc79gy1fj0dovfpolj30fs04n3yz.jpg)
 
 ### 属性动画的组成部分
 
-![valueanimator](/Users/zero/OneDrive/markdown\photo\动画\valueanimator.png)
+![valueanimator](https://ws2.sinaimg.cn/large/006tNc79gy1fj0doxd4zhj30k306oaav.jpg)
 
-+ ValueAnimator对象记录了动画的时间相关信息，如持续时间和动画过程中的属性值。
-+ ValueAnimator封装了一个动画插值器TimeInterpolator和一个确定如何计算动画属性值的TypeEvaluator。如上面的非线性动画使用的是AccelerateDecelerateInterpolator和IntEvaluator。
++ ValueAnimator 对象记录了动画的时间相关信息，如持续时间和动画过程中的属性值。
++ ValueAnimator 封装了一个动画插值器 TimeInterpolator 和一个确定如何计算动画属性值的TypeEvaluator。如上面的非线性动画使用的是 AccelerateDecelerateInterpolator 和IntEvaluator。
 + 给定动画开始属性值和结束属性值后，调用start()即可启动动画。
 + 在整个动画期间，ValueAnimator会基于动画持续时间及当前运行时间计算一个0到1的运行比例因子（*elapsed fraction*）。当ValueAnimator计算出一个运行比例因子后，它将调用设置好的TimeInterpolator来计算一个插入比例因子（*interpolated fraction*）。一个插值比例因子对应了一个运行比例因子。在上面的线性动画中，插值比例因子与运行比例因子相同。
 + 插值比例因子在运算时，ValueAnimator调用对应的TypeEvaluator来计算动画中的属性值（基于插值比例因子、开始值、结束值）。
@@ -71,7 +71,7 @@ categories: 笔记
 
 | 类              | 描述                                       |
 | -------------- | ---------------------------------------- |
-| ValueAnimator  | 属性动画主要的计时引擎，可以计算动画的属性的值。==属性动画可以分为两部分：计算动画的值和将这些值设置给对象和属性。ValueAnimator并没有实现第二部分==，所以我们必须通过ValueAnimator 监听计算的值的变化然后改变执行动画的对象。 |
+| ValueAnimator  | 属性动画主要的计时引擎，可以计算动画的属性的值。**属性动画可以分为两部分：计算动画的值和将这些值设置给对象和属性。ValueAnimator并没有实现第二部分**，所以我们必须通过ValueAnimator 监听计算的值的变化然后改变执行动画的对象。 |
 | ObjectAnimator | ValueAnimator的子类，可以设置一个目标对象和对象属性来执行动画。大部分情况下使用的都是ObjectAnimator，但因为ObjectAnimator的一些局限，比如要求目标对象具有特定的访问函数（get方法），可能会在某些时候直接使用ValueAnimator。 |
 | AnimatorSet    | 提供一种机制使动画成组执行。                           |
 
@@ -90,7 +90,7 @@ categories: 笔记
 
 ​	
 
-​	一个时间插值器定义了如何根据时间来计算动画中特定的值。
+​	时间插值器定义了如何根据时间来计算动画中特定的值。
 
 表三：interpolators
 
