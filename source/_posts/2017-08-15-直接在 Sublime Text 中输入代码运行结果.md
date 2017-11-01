@@ -8,6 +8,8 @@ categories: 笔记
 
 [How to run Java using Sublime Text 3 on Mac OS](https://stackoverflow.com/questions/24319143/how-to-run-java-using-sublime-text-3-on-mac-os)
 
+[Sublime Text 3 编译/运行Java程序](https://zhuanlan.zhihu.com/p/25820430)
+
 
 
 > 在 Sublime Text 中编写一个代码文件，然后按下 Ctrl + B，将会对文件进行编译，但并不会显示出运行结果，如一个 Hello.java 文件，Ctrl + B，将自动编译为一个 Hello.class 文件，Sublime Text 只会输出 “[Finished in XXs]”。 为了实现代码的运行，需要对修改对应的配置文件。下面以 Java 文件为例。
@@ -48,6 +50,33 @@ Sublime Text 构建系统的配置数据保存在 .sublime-build 后缀文件中
 ```
 
 （主要就是在 javac 后面加了 java 部分）
+
+> Windows系统可以使用压缩软件打开对应的包，然后修改为
+>
+> ```
+> {
+>     "cmd": ["java", "$file_base_name"],
+>     "file_regex": "^(...*?):([0-9]*):?([0-9]*)",
+>     "selector": "source.java",
+>     "variants": [
+>
+>         {
+>             "name": "JavaRun",
+>             "shell": true,
+>             "cmd" :  ["start","cmd","/c", "java ${file_base_name} &echo. & pause"],
+>             "working_dir": "${file_path}",
+>             "encoding":"GBK"
+>         },
+>
+>         {
+>           "name": "JavaGo",
+>           "cmd": ["java", "$file_base_name"]
+>         }
+>     ]
+> }
+> ```
+>
+> 
 
 最后压缩文件并替换原来的文件
 
