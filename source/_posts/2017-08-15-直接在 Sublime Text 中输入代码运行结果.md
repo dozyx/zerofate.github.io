@@ -16,6 +16,8 @@ categories: 笔记
 
 
 
+### OS X 系统
+
 Sublime Text 构建系统的配置数据保存在 .sublime-build 后缀文件中，
 
 先打开 Packages
@@ -51,33 +53,6 @@ Sublime Text 构建系统的配置数据保存在 .sublime-build 后缀文件中
 
 （主要就是在 javac 后面加了 java 部分）
 
-> Windows系统可以使用压缩软件打开对应的包，然后修改为
->
-> ```
-> {
->     "cmd": ["java", "$file_base_name"],
->     "file_regex": "^(...*?):([0-9]*):?([0-9]*)",
->     "selector": "source.java",
->     "variants": [
->
->         {
->             "name": "JavaRun",
->             "shell": true,
->             "cmd" :  ["start","cmd","/c", "java ${file_base_name} &echo. & pause"],
->             "working_dir": "${file_path}",
->             "encoding":"GBK"
->         },
->
->         {
->           "name": "JavaGo",
->           "cmd": ["java", "$file_base_name"]
->         }
->     ]
-> }
-> ```
->
-> 
-
 最后压缩文件并替换原来的文件
 
 > $ zip Java.sublime-package *
@@ -92,3 +67,37 @@ Sublime Text 构建系统的配置数据保存在 .sublime-build 后缀文件中
 
 现在，重启 Sublime Text，重新运行代码，就可以直接在 Sublime Text 中看到输出。
 
+
+
+### Windows 
+
+编写一个 runJava.bat 脚本文件，内容如下：
+
+```shell
+@ECHO OFF  
+cd %~dp1  
+ECHO Compiling %~nx1.......  
+IF EXIST %~n1.class (  
+DEL %~n1.class  
+)  
+javac %~nx1  
+IF EXIST %~n1.class (  
+ECHO -----------OUTPUT-----------  
+java %~n1  
+)  
+```
+
+将 runJava.bat 放到 JDK 安装目录的 bin 文件夹内（bin 需要已经添加到环境变量的 PATH 中）
+
+找到 Sublime Text 3 的安装目录，使用压缩文件打开 Java.sublime-package 文件（不需要解压），打开 JavaC.sublime-build 文件，修改内容为
+
+```yaml
+{  
+    "cmd": ["runJava.bat", "$file"],  
+    "file_regex": "^(...*?):([0-9]*):?([0-9]*)",  
+    "selector": "source.java",  
+    "encoding": "gbk"  
+}  
+```
+
+保存退出后，Ctrl + B 即可编译并输出结果。
