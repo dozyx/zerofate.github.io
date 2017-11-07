@@ -24,8 +24,8 @@ Butter Knife，黄油刀，它的用途在于
 
 ```groovy
 dependencies {
-  compile 'com.jakewharton:butterknife:8.6.0'
-  annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
+  compile 'com.jakewharton:butterknife:8.8.1'
+  annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }
 ```
 
